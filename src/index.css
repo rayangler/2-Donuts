@@ -1,0 +1,30 @@
+.EthnicDonut {
+  width: 450px;
+  height: 450;
+  margin-left: 100px;
+}
+
+.lehmanRace {
+  width: 600px;
+  height: 600;
+}
+
+.GenderDonut {
+  width: 450px;
+  height: 450;
+  margin-left: 100px;
+}
+
+.lehmanGender {
+  width: 600px;
+  height: 600;
+}
+
+h1 {
+  text-align: center;
+}
+
+.App {
+  padding-left: 2em;
+  padding-right: 2em;
+}
