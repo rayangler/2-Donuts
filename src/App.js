@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Map} from './components';
-import Logo from './logo__1__360.png';
+import Logo from './img/logo__1__360.png';
 import './App.css';
 
 class App extends Component {

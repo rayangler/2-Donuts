@@ -1,21 +1,10 @@
-.EthnicDonut {
+.Donut {
   width: 450px;
   height: 450;
   margin-left: 100px;
 }
 
-.lehmanRace {
-  width: 600px;
-  height: 600;
-}
-
-.GenderDonut {
-  width: 450px;
-  height: 450;
-  margin-left: 100px;
-}
-
-.lehmanGender {
+.lineGraph {
   width: 600px;
   height: 600;
 }

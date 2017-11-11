@@ -2,15 +2,12 @@ import React from "react";
 import { compose, withProps } from "recompose";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 import { Information } from '../components';
-import Random from '../randomImg.png';
 
-
-const defaultCenter={ lat: 40.7134, lng: -74.0055 }; /* NYC */
+const defaultCenter={ lat: 39.8283, lng: -98.5795 }; /* of the US */
 const lehman={ lat: 40.8733, lng: -73.8941 };
 const ucDavis= { lat: 38.5382, lng: -121.7617 };
 const isMarkerShown=true;
 
-/* child component ? */
 const MyMapComponent = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDCXCgYKw10ci0cm1Oe7gCU8353rS6riDw&libraries=places",
@@ -22,28 +19,30 @@ const MyMapComponent = compose(
   withGoogleMap
 )((props) =>
   <GoogleMap
-    defaultZoom={9}
+    defaultZoom={4}
     center={defaultCenter}
   >
-    {props.isMarkerShown && <Marker position={lehman} onClick={props.onMarkerClick}/>}
-    {props.isMarkerShown && <Marker position={ucDavis} />}
+    {props.isMarkerShown && <Marker position={lehman} onClick={props.onMarkerClick1}/>}
+    {props.isMarkerShown && <Marker position={ucDavis} onClick={props.onMarkerClick2}/>}
   </GoogleMap>
 )
 
-/* parent component ? */
 export default class Map extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       img: ''
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick1 = this.handleClick1.bind(this);
+    this.handleClick2 = this.handleClick2.bind(this);
   }
 
-  handleClick(e) {
-    this.setState({
-      img: 'lehman'
-    });
+  handleClick1() {
+    this.setState({img: 'lehman'});
+  }
+
+  handleClick2() {
+    this.setState({img: 'ucDavis'});
   }
 
   render() {
@@ -52,7 +51,8 @@ export default class Map extends React.PureComponent {
       <div>
         <MyMapComponent
           isMarkerShown={isMarkerShown}
-          onMarkerClick={this.handleClick}
+          onMarkerClick1={this.handleClick1}
+          onMarkerClick2={this.handleClick2}
           />
         <Information newImg={this.state.img}/>
       </div>

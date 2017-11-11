@@ -3,5 +3,5 @@ import Information from './InformationComponent';
 
 export {
   Map,
-  Information,
+  Information
 }
